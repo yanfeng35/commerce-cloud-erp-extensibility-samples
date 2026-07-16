@@ -1,0 +1,10 @@
+{
+  "name": "S4 Retrieve Sales Price",
+  "id": "a2d5e8f1-3c6b-4e9d-b047-1a2c3d4e5f99",
+  "type": "SYNCHRONOUS_EXTENSION",
+  "extensionPointId": "sap.ccm.product.determinePrice.determinePrice",
+  "executionMode": "SYNC",
+  "inboundMappingDefinitionId": "f6b92234-7a0f-8c3b-f48b-5e6a7b8c9d99",
+  "outboundMappingDefinitionId": "e5a81123-6f9e-7b2a-e37a-4d5f6a7b8c99",
+  "destinationName": "s4-salesprice"
+}

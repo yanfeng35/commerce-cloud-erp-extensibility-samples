@@ -1,0 +1,26 @@
+---
+name: "S4 Retrieve Sales Price Plugin"
+version: "1.0.0"
+sourceAccountId: "38671960"
+sourceTenantId: "hmwj2588fzjj"
+description: "Integrates with SAP S4HANA to retrieve real-time sales price information for SAP Commerce Cloud, cloud ERP edition."
+pluginId: "b1c7f2e3-9d4a-4b8e-a123-5f8e29d47c99"
+components:
+- type: "function"
+  componentId: "c3e6f901-4d7c-5f0e-c158-2b3d4e5f6a99"
+  path: "config/functions/s4SalesPriceOutbound.json"
+- type: "function"
+  componentId: "d4f70012-5e8d-6a1f-d269-3c4e5f6a7b99"
+  path: "config/functions/s4SalesPriceInbound.json"
+- type: "data_mapper"
+  componentId: "e5a81123-6f9e-7b2a-e37a-4d5f6a7b8c99"
+  path: "config/data_mappers/inbound.json"
+- type: "data_mapper"
+  componentId: "f6b92234-7a0f-8c3b-f48b-5e6a7b8c9d99"
+  path: "config/data_mappers/outbound.json"
+- type: "synchronous_extension"
+  componentId: "a2d5e8f1-3c6b-4e9d-b047-1a2c3d4e5f99"
+  path: "config/synchronous_extensions/s4_retrieve_sales_price.json"
+dependencies: []
+avatar: null
+globalDefinitions: []
