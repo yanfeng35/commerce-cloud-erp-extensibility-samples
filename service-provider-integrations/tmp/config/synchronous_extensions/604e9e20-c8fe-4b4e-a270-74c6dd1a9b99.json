@@ -1,0 +1,1 @@
+{"name":"Avalara Simulate Test01","id":"604e9e20-c8fe-4b4e-a270-74c6dd1a9b99","type":"SYNCHRONOUS_EXTENSION","extensionPointId":"sap.ccm.tax.simulateTax.simulateTax","executionMode":"SYNC","inboundMappingDefinitionId":"4eb58b0a-4531-44a8-9dda-9cd5d4b59a99","outboundMappingDefinitionId":"f7a75f04-ea93-47fb-b461-3a8d262e5e99","destinationName":"tax-avalara"}

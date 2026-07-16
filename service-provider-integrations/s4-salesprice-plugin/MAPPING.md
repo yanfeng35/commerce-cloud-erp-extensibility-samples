@@ -32,12 +32,8 @@
 | 2 | `value[].NetAmount` | `data.operations[0].data.products[].price.value` | Direct map | Net amount after discounts, excl. tax; primary price value |
 | 3 | `value[].NetAmount` | `data.operations[0].data.products[].price.scalePrices[0].price` | Direct map (duplicated) | Single scale price entry; always minQuantity=1 — **consequence of known business gap on RequestedQuantity** |
 | 4 | _(hardcoded `1`)_ | `data.operations[0].data.products[].price.scalePrices[0].minQuantity` | Hardcoded | Fixed to 1 because S/4 was always called with qty 1 |
-| 5 | `value[]._SystemMessages[].SystemMessageType` | `data.operations[1].data.messages[].kind` | Mapped with transformation | `E` → `ERROR`, `W` → `WARNING`, anything else → `INFO` |
-| 6 | `value[]._SystemMessages[].SystemMessageNumber` | `data.operations[1].data.messages[].code` | Direct map (cast to string) | |
-| 7 | `value[]._SystemMessages[].SystemMessageText` | `data.operations[1].data.messages[].message` | Direct map | |
-| 8 | `value[]._SystemMessages[].SystemMessageIdentification` | `data.operations[1].data.messages[].target` | Direct map | Defaults to `""` if absent |
-| 9 | _(hardcoded `"productPrice"`)_ | `data.operations[0].operationId` | Hardcoded | Required CCS operation discriminator |
-| 10 | _(hardcoded `"addMessages"`)_ | `data.operations[1].operationId` | Hardcoded | Only emitted when `_SystemMessages` is non-empty |
+| 5 | _(hardcoded `"productPrice"`)_ | `data.operations[0].operationId` | Hardcoded | Required CCS operation discriminator |
+| 6 | `value[]._SystemMessages[]` | _(not mapped)_ | **Known limitation** | EXPRESSION mapper cannot conditionally emit a second operation; S/4 messages are discarded — see Gap G7 |
 
 ### S/4 response fields available but not mapped to CCS
 
@@ -67,3 +63,4 @@
 | G4 | `_SalesPriceElements` not mapped to CCS response | S/4→CCS | Full pricing breakdown (conditions, discounts, tax lines) is discarded | CCS SPI enhancement: add a price elements / breakdown structure to `ProductPriceInput` |
 | G5 | `TaxAmount` not mapped to CCS response | S/4→CCS | Tax is excluded from the determined price; downstream tax calculation may double-count | Accepted: tax is handled separately via the `simulateTax` extension point |
 | G6 | `PricingHasError` not mapped to CCS response | S/4→CCS | Pricing error flag is lost unless S/4 also populates `_SystemMessages` | Mitigation: S/4 typically populates `_SystemMessages` when `PricingHasError=true`; add explicit check if needed |
+| G7 | `_SystemMessages` not forwarded to CCS | S/4→CCS | S/4 warning/error messages are silently discarded | Inbound mapper uses EXPRESSION type (platform constraint); upgrade to FUNCTION-based inbound mapper once platform supports multiple functions per plugin |

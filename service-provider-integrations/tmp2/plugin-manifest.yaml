@@ -1,0 +1,23 @@
+name: Avalara Tax Sample Plugin 20260630161837
+version: 1.0.0
+sourceAccountId: "SAP"
+sourceTenantId: "SAP_CCS"
+description: Integrates with Avalara to simulate tax calculations for SAP Commerce Cloud, cloud ERP edition.
+author: SAP Commerce Cloud, cloud ERP edition
+pluginId: 00352147-4882-47af-83ce-c7d8f91adde1
+license: Apache-2.0
+repository: https://github.com/SAP-samples/commerce-cloud-erp-extensibility-samples/tree/main/service-provider-integrations/avalara-tax-sample-plugin
+components:
+  - type: synchronous_extension
+    componentId: ef7797fc-ecb0-40a1-9655-2e51259babd5
+    path: "config/synchronous_extensions/simulate_tax.json"
+  - type: "function"
+    componentId: "ec2204e0-1936-4372-ac71-85aabe967f0b"
+    path: "config/functions/avalaraOutbound.json"
+  - type: "data_mapper"
+    componentId: "a8f1c9a7-db9c-4916-87eb-d447c7c0409c"
+    path: "config/data_mappers/avaplugin_inbound.json"
+  - type: "data_mapper"
+    componentId: "02a70515-7b1e-4cb1-8b66-c80477b69672"
+    path: "config/data_mappers/avaplugin_outbound.json"
+

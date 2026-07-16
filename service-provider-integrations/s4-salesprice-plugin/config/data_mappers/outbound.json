@@ -1,275 +1,144 @@
 {
-  "id": "f6b92234-7a0f-8c3b-f48b-5e6a7b8c9d99",
+  "id": "e5a81123-6f9e-4b2a-a37a-4d5f6a7b8c01",
   "type": "DATA_MAPPER",
-  "name": "s4SalesPriceInbound",
+  "name": "s4SalesPriceOutbound",
   "mappingDefinition": {
     "sourceSchema": {
       "attributes": [
         {
-          "name": "value",
-          "path": "/value",
+          "name": "commerceContext",
+          "path": "/commerceContext",
           "dataType": "OBJECT",
-          "required": true,
-          "multiple": true,
+          "required": false,
+          "multiple": false,
           "attributes": [
             {
-              "name": "SalesOrganization",
-              "path": "/value/SalesOrganization",
+              "name": "storeId",
+              "path": "/commerceContext/storeId",
+              "dataType": "STRING",
+              "required": false,
+              "multiple": false,
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "extensibilityContext",
+          "path": "/extensibilityContext",
+          "dataType": "OBJECT",
+          "required": false,
+          "multiple": false,
+          "attributes": [
+            {
+              "name": "id",
+              "path": "/extensibilityContext/id",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
               "attributes": []
             },
             {
-              "name": "DistributionChannel",
-              "path": "/value/DistributionChannel",
+              "name": "triggeredAt",
+              "path": "/extensibilityContext/triggeredAt",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
               "attributes": []
             },
             {
-              "name": "Division",
-              "path": "/value/Division",
+              "name": "extensionPointId",
+              "path": "/extensibilityContext/extensionPointId",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
               "attributes": []
-            },
+            }
+          ]
+        },
+        {
+          "name": "data",
+          "path": "/data",
+          "dataType": "OBJECT",
+          "required": true,
+          "multiple": false,
+          "attributes": [
             {
-              "name": "Product",
-              "path": "/value/Product",
-              "dataType": "STRING",
-              "required": true,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "ProductUsedByCustomer",
-              "path": "/value/ProductUsedByCustomer",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "SoldToParty",
-              "path": "/value/SoldToParty",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "PricingDate",
-              "path": "/value/PricingDate",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "TransactionCurrency",
-              "path": "/value/TransactionCurrency",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "LanguageISOCode",
-              "path": "/value/LanguageISOCode",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "RequestedQuantity",
-              "path": "/value/RequestedQuantity",
-              "dataType": "NUMBER",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "RequestedQuantityISOUnit",
-              "path": "/value/RequestedQuantityISOUnit",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "RequestedQuantitySAPUnit",
-              "path": "/value/RequestedQuantitySAPUnit",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "NetAmount",
-              "path": "/value/NetAmount",
-              "dataType": "NUMBER",
-              "required": true,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "NetPriceAmount",
-              "path": "/value/NetPriceAmount",
-              "dataType": "NUMBER",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "NetPriceQuantity",
-              "path": "/value/NetPriceQuantity",
-              "dataType": "NUMBER",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "NetPriceQuantityUnitISOCode",
-              "path": "/value/NetPriceQuantityUnitISOCode",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "NetPriceQuantityUnitSAPCode",
-              "path": "/value/NetPriceQuantityUnitSAPCode",
-              "dataType": "STRING",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "TaxAmount",
-              "path": "/value/TaxAmount",
-              "dataType": "NUMBER",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "PricingHasError",
-              "path": "/value/PricingHasError",
-              "dataType": "BOOLEAN",
-              "required": false,
-              "multiple": false,
-              "attributes": []
-            },
-            {
-              "name": "_SalesPriceElements",
-              "path": "/value/_SalesPriceElements",
+              "name": "products",
+              "path": "/data/products",
               "dataType": "OBJECT",
-              "required": false,
+              "required": true,
               "multiple": true,
               "attributes": [
                 {
-                  "name": "PricingProcedureStep",
-                  "path": "/value/_SalesPriceElements/PricingProcedureStep",
+                  "name": "id",
+                  "path": "/data/products/id",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 },
                 {
-                  "name": "PricingProcedureCounter",
-                  "path": "/value/_SalesPriceElements/PricingProcedureCounter",
+                  "name": "salesMeasureUnit",
+                  "path": "/data/products/salesMeasureUnit",
+                  "dataType": "OBJECT",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": [
+                    {
+                      "name": "salesUnitCode",
+                      "path": "/data/products/salesMeasureUnit/salesUnitCode",
+                      "dataType": "STRING",
+                      "required": true,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "isocode",
+                      "path": "/data/products/salesMeasureUnit/isocode",
+                      "dataType": "STRING",
+                      "required": true,
+                      "multiple": false,
+                      "attributes": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "currency",
+              "path": "/data/currency",
+              "dataType": "OBJECT",
+              "required": true,
+              "multiple": false,
+              "attributes": [
+                {
+                  "name": "code",
+                  "path": "/data/currency/code",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
-                },
+                }
+              ]
+            },
+            {
+              "name": "businessPartner",
+              "path": "/data/businessPartner",
+              "dataType": "OBJECT",
+              "required": false,
+              "multiple": false,
+              "attributes": [
                 {
-                  "name": "ConditionType",
-                  "path": "/value/_SalesPriceElements/ConditionType",
+                  "name": "id",
+                  "path": "/data/businessPartner/id",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 },
                 {
-                  "name": "PriceElementDescription",
-                  "path": "/value/_SalesPriceElements/PriceElementDescription",
-                  "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionRateAmount",
-                  "path": "/value/_SalesPriceElements/ConditionRateAmount",
-                  "dataType": "NUMBER",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionCurrency",
-                  "path": "/value/_SalesPriceElements/ConditionCurrency",
-                  "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionRateRatio",
-                  "path": "/value/_SalesPriceElements/ConditionRateRatio",
-                  "dataType": "NUMBER",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionQuantity",
-                  "path": "/value/_SalesPriceElements/ConditionQuantity",
-                  "dataType": "NUMBER",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionBaseQuantity",
-                  "path": "/value/_SalesPriceElements/ConditionBaseQuantity",
-                  "dataType": "NUMBER",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionQuantityUnitISOCode",
-                  "path": "/value/_SalesPriceElements/ConditionQuantityUnitISOCode",
-                  "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionQuantityUnitSAPCode",
-                  "path": "/value/_SalesPriceElements/ConditionQuantityUnitSAPCode",
-                  "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "ConditionAmount",
-                  "path": "/value/_SalesPriceElements/ConditionAmount",
-                  "dataType": "NUMBER",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "TransactionCurrency",
-                  "path": "/value/_SalesPriceElements/TransactionCurrency",
+                  "name": "customerNumber",
+                  "path": "/data/businessPartner/customerNumber",
                   "dataType": "STRING",
                   "required": false,
                   "multiple": false,
@@ -278,49 +147,33 @@
               ]
             },
             {
-              "name": "_SystemMessages",
-              "path": "/value/_SystemMessages",
+              "name": "salesArea",
+              "path": "/data/salesArea",
               "dataType": "OBJECT",
-              "required": false,
-              "multiple": true,
+              "required": true,
+              "multiple": false,
               "attributes": [
                 {
-                  "name": "SystemMessageIdentification",
-                  "path": "/value/_SystemMessages/SystemMessageIdentification",
+                  "name": "salesOrganization",
+                  "path": "/data/salesArea/salesOrganization",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 },
                 {
-                  "name": "SystemMessageType",
-                  "path": "/value/_SystemMessages/SystemMessageType",
+                  "name": "distributionChannel",
+                  "path": "/data/salesArea/distributionChannel",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 },
                 {
-                  "name": "SystemMessageTypeName",
-                  "path": "/value/_SystemMessages/SystemMessageTypeName",
+                  "name": "division",
+                  "path": "/data/salesArea/division",
                   "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "SystemMessageNumber",
-                  "path": "/value/_SystemMessages/SystemMessageNumber",
-                  "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "SystemMessageText",
-                  "path": "/value/_SystemMessages/SystemMessageText",
-                  "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 }
@@ -333,145 +186,132 @@
     "targetSchema": {
       "attributes": [
         {
-          "name": "data",
-          "path": "/data",
-          "dataType": "OBJECT",
+          "name": "SalesOrganization",
+          "path": "/SalesOrganization",
+          "dataType": "STRING",
           "required": true,
           "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "DistributionChannel",
+          "path": "/DistributionChannel",
+          "dataType": "STRING",
+          "required": true,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "Division",
+          "path": "/Division",
+          "dataType": "STRING",
+          "required": true,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "TransactionCurrency",
+          "path": "/TransactionCurrency",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "SalesDocumentType",
+          "path": "/SalesDocumentType",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "SalesDocumentItemCategory",
+          "path": "/SalesDocumentItemCategory",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "BillingDocumentType",
+          "path": "/BillingDocumentType",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "LanguageISOCode",
+          "path": "/LanguageISOCode",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "SalesPriceRetrieveUseCase",
+          "path": "/SalesPriceRetrieveUseCase",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "PriceElementsAreRequested",
+          "path": "/PriceElementsAreRequested",
+          "dataType": "BOOLEAN",
+          "required": true,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "PricingDate",
+          "path": "/PricingDate",
+          "dataType": "STRING",
+          "required": true,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "_Product",
+          "path": "/_Product",
+          "dataType": "OBJECT",
+          "required": true,
+          "multiple": true,
           "attributes": [
             {
-              "name": "operations",
-              "path": "/data/operations",
-              "dataType": "OBJECT",
+              "name": "Product",
+              "path": "/_Product/Product",
+              "dataType": "STRING",
               "required": true,
-              "multiple": true,
-              "attributes": [
-                {
-                  "name": "operationId",
-                  "path": "/data/operations/operationId",
-                  "dataType": "STRING",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "data",
-                  "path": "/data/operations/data",
-                  "dataType": "OBJECT",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": [
-                    {
-                      "name": "products",
-                      "path": "/data/operations/data/products",
-                      "dataType": "OBJECT",
-                      "required": false,
-                      "multiple": true,
-                      "attributes": [
-                        {
-                          "name": "id",
-                          "path": "/data/operations/data/products/id",
-                          "dataType": "STRING",
-                          "required": true,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "price",
-                          "path": "/data/operations/data/products/price",
-                          "dataType": "OBJECT",
-                          "required": true,
-                          "multiple": false,
-                          "attributes": [
-                            {
-                              "name": "value",
-                              "path": "/data/operations/data/products/price/value",
-                              "dataType": "NUMBER",
-                              "required": true,
-                              "multiple": false,
-                              "attributes": []
-                            },
-                            {
-                              "name": "scalePrices",
-                              "path": "/data/operations/data/products/price/scalePrices",
-                              "dataType": "OBJECT",
-                              "required": false,
-                              "multiple": true,
-                              "attributes": [
-                                {
-                                  "name": "minQuantity",
-                                  "path": "/data/operations/data/products/price/scalePrices/minQuantity",
-                                  "dataType": "NUMBER",
-                                  "required": true,
-                                  "multiple": false,
-                                  "attributes": []
-                                },
-                                {
-                                  "name": "maxQuantity",
-                                  "path": "/data/operations/data/products/price/scalePrices/maxQuantity",
-                                  "dataType": "NUMBER",
-                                  "required": false,
-                                  "multiple": false,
-                                  "attributes": []
-                                },
-                                {
-                                  "name": "price",
-                                  "path": "/data/operations/data/products/price/scalePrices/price",
-                                  "dataType": "NUMBER",
-                                  "required": false,
-                                  "multiple": false,
-                                  "attributes": []
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "name": "messages",
-                      "path": "/data/operations/data/messages",
-                      "dataType": "OBJECT",
-                      "required": false,
-                      "multiple": true,
-                      "attributes": [
-                        {
-                          "name": "kind",
-                          "path": "/data/operations/data/messages/kind",
-                          "dataType": "STRING",
-                          "required": true,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "code",
-                          "path": "/data/operations/data/messages/code",
-                          "dataType": "STRING",
-                          "required": true,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "message",
-                          "path": "/data/operations/data/messages/message",
-                          "dataType": "STRING",
-                          "required": true,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "target",
-                          "path": "/data/operations/data/messages/target",
-                          "dataType": "STRING",
-                          "required": false,
-                          "multiple": false,
-                          "attributes": []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "multiple": false,
+              "attributes": []
+            },
+            {
+              "name": "ProductUsedByCustomer",
+              "path": "/_Product/ProductUsedByCustomer",
+              "dataType": "STRING",
+              "required": false,
+              "multiple": false,
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "_SoldToParty",
+          "path": "/_SoldToParty",
+          "dataType": "OBJECT",
+          "required": true,
+          "multiple": true,
+          "attributes": [
+            {
+              "name": "SoldToParty",
+              "path": "/_SoldToParty/SoldToParty",
+              "dataType": "STRING",
+              "required": true,
+              "multiple": false,
+              "attributes": []
             }
           ]
         }
@@ -479,7 +319,7 @@
     },
     "schemaTransformations": {
       "type": "FUNCTION",
-      "functionId": "d4f70012-5e8d-6a1f-d269-3c4e5f6a7b99"
+      "functionId": "c3e6f901-4d7c-4f0e-a158-2b3d4e5f6a01"
     }
   }
 }

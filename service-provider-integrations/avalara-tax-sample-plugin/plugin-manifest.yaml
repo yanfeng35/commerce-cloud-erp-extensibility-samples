@@ -1,10 +1,10 @@
-name: Avalara Tax Sample Plugin
+name: Avalara Tax Sample Plugin-Rick
 version: 1.0.0
 sourceAccountId: "SAP"
 sourceTenantId: "SAP_CCS"
 description: Integrates with Avalara to simulate tax calculations for SAP Commerce Cloud, cloud ERP edition.
 author: SAP Commerce Cloud, cloud ERP edition
-pluginId: a6683439-de46-464f-a59e-fb6397b625e2
+pluginId: a6683438-de46-464f-a59e-fb6397b625e2
 license: Apache-2.0
 repository: https://github.com/SAP-samples/commerce-cloud-erp-extensibility-samples/tree/main/service-provider-integrations/avalara-tax-sample-plugin
 components:

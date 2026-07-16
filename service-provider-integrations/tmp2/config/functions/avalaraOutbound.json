@@ -1,0 +1,16 @@
+{
+    "id": "ec2204e0-1936-4372-ac71-85aabe967f0b",
+    "type": "FUNCTION",
+    "name": "avalaraOutbound",
+    "binaryResources": [
+        {
+            "id": "avaoutbound",
+            "type": "ZIP",
+            "size": 2172
+        }
+    ],
+    "updatedAt": "2024-06-11T09:05:20.404Z",
+    "createdAt": "2024-06-11T09:05:20.361Z",
+    "numberOfFiles": 1,
+    "size": 287
+}
