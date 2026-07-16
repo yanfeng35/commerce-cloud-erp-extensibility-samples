@@ -1,5 +1,5 @@
 {
-  "id": "e5a81123-6f9e-4b2a-a37a-4d5f6a7b8c01",
+  "id": "2bdcb641-d256-4a7b-be87-264d03114087",
   "type": "DATA_MAPPER",
   "name": "s4SalesPriceOutbound",
   "mappingDefinition": {
@@ -78,25 +78,25 @@
                   "attributes": []
                 },
                 {
+                  "name": "quantity",
+                  "path": "/data/products/quantity",
+                  "dataType": "NUMBER",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
                   "name": "salesMeasureUnit",
                   "path": "/data/products/salesMeasureUnit",
                   "dataType": "OBJECT",
-                  "required": true,
+                  "required": false,
                   "multiple": false,
                   "attributes": [
-                    {
-                      "name": "salesUnitCode",
-                      "path": "/data/products/salesMeasureUnit/salesUnitCode",
-                      "dataType": "STRING",
-                      "required": true,
-                      "multiple": false,
-                      "attributes": []
-                    },
                     {
                       "name": "isocode",
                       "path": "/data/products/salesMeasureUnit/isocode",
                       "dataType": "STRING",
-                      "required": true,
+                      "required": false,
                       "multiple": false,
                       "attributes": []
                     }
@@ -128,14 +128,6 @@
               "required": false,
               "multiple": false,
               "attributes": [
-                {
-                  "name": "id",
-                  "path": "/data/businessPartner/id",
-                  "dataType": "STRING",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": []
-                },
                 {
                   "name": "customerNumber",
                   "path": "/data/businessPartner/customerNumber",
@@ -189,7 +181,7 @@
           "name": "SalesOrganization",
           "path": "/SalesOrganization",
           "dataType": "STRING",
-          "required": true,
+          "required": false,
           "multiple": false,
           "attributes": []
         },
@@ -197,7 +189,7 @@
           "name": "DistributionChannel",
           "path": "/DistributionChannel",
           "dataType": "STRING",
-          "required": true,
+          "required": false,
           "multiple": false,
           "attributes": []
         },
@@ -205,7 +197,7 @@
           "name": "Division",
           "path": "/Division",
           "dataType": "STRING",
-          "required": true,
+          "required": false,
           "multiple": false,
           "attributes": []
         },
@@ -242,14 +234,6 @@
           "attributes": []
         },
         {
-          "name": "LanguageISOCode",
-          "path": "/LanguageISOCode",
-          "dataType": "STRING",
-          "required": false,
-          "multiple": false,
-          "attributes": []
-        },
-        {
           "name": "SalesPriceRetrieveUseCase",
           "path": "/SalesPriceRetrieveUseCase",
           "dataType": "STRING",
@@ -258,39 +242,31 @@
           "attributes": []
         },
         {
-          "name": "PriceElementsAreRequested",
-          "path": "/PriceElementsAreRequested",
-          "dataType": "BOOLEAN",
-          "required": true,
-          "multiple": false,
-          "attributes": []
-        },
-        {
-          "name": "PricingDate",
-          "path": "/PricingDate",
-          "dataType": "STRING",
-          "required": true,
-          "multiple": false,
-          "attributes": []
-        },
-        {
           "name": "_Product",
           "path": "/_Product",
           "dataType": "OBJECT",
-          "required": true,
+          "required": false,
           "multiple": true,
           "attributes": [
             {
               "name": "Product",
               "path": "/_Product/Product",
               "dataType": "STRING",
-              "required": true,
+              "required": false,
               "multiple": false,
               "attributes": []
             },
             {
-              "name": "ProductUsedByCustomer",
-              "path": "/_Product/ProductUsedByCustomer",
+              "name": "RequestedQuantity",
+              "path": "/_Product/RequestedQuantity",
+              "dataType": "NUMBER",
+              "required": false,
+              "multiple": false,
+              "attributes": []
+            },
+            {
+              "name": "RequestedQuantityISOUnit",
+              "path": "/_Product/RequestedQuantityISOUnit",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
@@ -302,14 +278,14 @@
           "name": "_SoldToParty",
           "path": "/_SoldToParty",
           "dataType": "OBJECT",
-          "required": true,
+          "required": false,
           "multiple": true,
           "attributes": [
             {
               "name": "SoldToParty",
               "path": "/_SoldToParty/SoldToParty",
               "dataType": "STRING",
-              "required": true,
+              "required": false,
               "multiple": false,
               "attributes": []
             }
@@ -319,7 +295,7 @@
     },
     "schemaTransformations": {
       "type": "FUNCTION",
-      "functionId": "c3e6f901-4d7c-4f0e-a158-2b3d4e5f6a01"
+      "functionId": "b91466a0-5131-4829-83e1-e52ba3042f2f"
     }
   }
 }
