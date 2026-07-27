@@ -78,29 +78,45 @@
                   "attributes": []
                 },
                 {
-                  "name": "quantity",
-                  "path": "/data/products/quantity",
-                  "dataType": "NUMBER",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "salesMeasureUnit",
-                  "path": "/data/products/salesMeasureUnit",
+                  "name": "unit",
+                  "path": "/data/products/unit",
                   "dataType": "OBJECT",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": [
                     {
-                      "name": "isocode",
-                      "path": "/data/products/salesMeasureUnit/isocode",
+                      "name": "code",
+                      "path": "/data/products/unit/code",
+                      "dataType": "STRING",
+                      "required": true,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "sapCode",
+                      "path": "/data/products/unit/sapCode",
                       "dataType": "STRING",
                       "required": false,
                       "multiple": false,
                       "attributes": []
                     }
                   ]
+                },
+                {
+                  "name": "quantity",
+                  "path": "/data/products/quantity",
+                  "dataType": "NUMBER",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "includeScalePrices",
+                  "path": "/data/products/includeScalePrices",
+                  "dataType": "BOOLEAN",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
                 }
               ]
             },
@@ -118,21 +134,29 @@
                   "required": true,
                   "multiple": false,
                   "attributes": []
+                },
+                {
+                  "name": "sapCode",
+                  "path": "/data/currency/sapCode",
+                  "dataType": "STRING",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": []
                 }
               ]
             },
             {
-              "name": "businessPartner",
-              "path": "/data/businessPartner",
+              "name": "customer",
+              "path": "/data/customer",
               "dataType": "OBJECT",
               "required": false,
               "multiple": false,
               "attributes": [
                 {
-                  "name": "customerNumber",
-                  "path": "/data/businessPartner/customerNumber",
+                  "name": "id",
+                  "path": "/data/customer/id",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 }
@@ -142,7 +166,7 @@
               "name": "salesArea",
               "path": "/data/salesArea",
               "dataType": "OBJECT",
-              "required": true,
+              "required": false,
               "multiple": false,
               "attributes": [
                 {
@@ -170,6 +194,14 @@
                   "attributes": []
                 }
               ]
+            },
+            {
+              "name": "pricingAt",
+              "path": "/data/pricingAt",
+              "dataType": "STRING",
+              "required": false,
+              "multiple": false,
+              "attributes": []
             }
           ]
         }
@@ -181,7 +213,7 @@
           "name": "SalesOrganization",
           "path": "/SalesOrganization",
           "dataType": "STRING",
-          "required": false,
+          "required": true,
           "multiple": false,
           "attributes": []
         },
@@ -189,7 +221,7 @@
           "name": "DistributionChannel",
           "path": "/DistributionChannel",
           "dataType": "STRING",
-          "required": false,
+          "required": true,
           "multiple": false,
           "attributes": []
         },
@@ -197,13 +229,21 @@
           "name": "Division",
           "path": "/Division",
           "dataType": "STRING",
-          "required": false,
+          "required": true,
           "multiple": false,
           "attributes": []
         },
         {
           "name": "TransactionCurrency",
           "path": "/TransactionCurrency",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "LanguageISOCode",
+          "path": "/LanguageISOCode",
           "dataType": "STRING",
           "required": false,
           "multiple": false,
@@ -242,6 +282,22 @@
           "attributes": []
         },
         {
+          "name": "PriceElementsAreRequested",
+          "path": "/PriceElementsAreRequested",
+          "dataType": "BOOLEAN",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
+          "name": "PricingDate",
+          "path": "/PricingDate",
+          "dataType": "STRING",
+          "required": false,
+          "multiple": false,
+          "attributes": []
+        },
+        {
           "name": "_Product",
           "path": "/_Product",
           "dataType": "OBJECT",
@@ -251,6 +307,14 @@
             {
               "name": "Product",
               "path": "/_Product/Product",
+              "dataType": "STRING",
+              "required": false,
+              "multiple": false,
+              "attributes": []
+            },
+            {
+              "name": "ProductUsedByCustomer",
+              "path": "/_Product/ProductUsedByCustomer",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
@@ -271,6 +335,14 @@
               "required": false,
               "multiple": false,
               "attributes": []
+            },
+            {
+              "name": "RequestedQuantitySAPUnit",
+              "path": "/_Product/RequestedQuantitySAPUnit",
+              "dataType": "STRING",
+              "required": false,
+              "multiple": false,
+              "attributes": []
             }
           ]
         },
@@ -285,7 +357,7 @@
               "name": "SoldToParty",
               "path": "/_SoldToParty/SoldToParty",
               "dataType": "STRING",
-              "required": false,
+              "required": true,
               "multiple": false,
               "attributes": []
             }

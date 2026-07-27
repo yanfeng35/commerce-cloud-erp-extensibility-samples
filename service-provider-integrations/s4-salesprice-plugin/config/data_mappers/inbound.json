@@ -84,6 +84,80 @@
                   "required": false,
                   "multiple": false,
                   "attributes": []
+                },
+                {
+                  "name": "_SalesPriceElements",
+                  "path": "/data/value/_SalesPriceElements",
+                  "dataType": "OBJECT",
+                  "required": false,
+                  "multiple": true,
+                  "attributes": [
+                    {
+                      "name": "ConditionType",
+                      "path": "/data/value/_SalesPriceElements/ConditionType",
+                      "dataType": "STRING",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "ConditionAmount",
+                      "path": "/data/value/_SalesPriceElements/ConditionAmount",
+                      "dataType": "NUMBER",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "ConditionCalculationType",
+                      "path": "/data/value/_SalesPriceElements/ConditionCalculationType",
+                      "dataType": "STRING",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "ConditionRateValue",
+                      "path": "/data/value/_SalesPriceElements/ConditionRateValue",
+                      "dataType": "NUMBER",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    }
+                  ]
+                },
+                {
+                  "name": "_SlsPrcgCndnRecdValidity",
+                  "path": "/data/value/_SlsPrcgCndnRecdValidity",
+                  "dataType": "OBJECT",
+                  "required": false,
+                  "multiple": true,
+                  "attributes": [
+                    {
+                      "name": "ConditionScaleQuantity",
+                      "path": "/data/value/_SlsPrcgCndnRecdValidity/ConditionScaleQuantity",
+                      "dataType": "NUMBER",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "ConditionScaleQuantityUnit",
+                      "path": "/data/value/_SlsPrcgCndnRecdValidity/ConditionScaleQuantityUnit",
+                      "dataType": "STRING",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "ConditionRateValue",
+                      "path": "/data/value/_SlsPrcgCndnRecdValidity/ConditionRateValue",
+                      "dataType": "NUMBER",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    }
+                  ]
                 }
               ]
             }
@@ -111,7 +185,7 @@
                   "name": "operationId",
                   "path": "/data/operations/operationId",
                   "dataType": "STRING",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": []
                 },
@@ -119,21 +193,21 @@
                   "name": "data",
                   "path": "/data/operations/data",
                   "dataType": "OBJECT",
-                  "required": false,
+                  "required": true,
                   "multiple": false,
                   "attributes": [
                     {
                       "name": "products",
                       "path": "/data/operations/data/products",
                       "dataType": "OBJECT",
-                      "required": false,
+                      "required": true,
                       "multiple": true,
                       "attributes": [
                         {
                           "name": "id",
                           "path": "/data/operations/data/products/id",
                           "dataType": "STRING",
-                          "required": false,
+                          "required": true,
                           "multiple": false,
                           "attributes": []
                         },
@@ -145,12 +219,95 @@
                           "multiple": false,
                           "attributes": [
                             {
-                              "name": "value",
-                              "path": "/data/operations/data/products/price/value",
+                              "name": "effectiveValue",
+                              "path": "/data/operations/data/products/price/effectiveValue",
                               "dataType": "NUMBER",
-                              "required": false,
+                              "required": true,
                               "multiple": false,
                               "attributes": []
+                            },
+                            {
+                              "name": "priceBreakdowns",
+                              "path": "/data/operations/data/products/price/priceBreakdowns",
+                              "dataType": "OBJECT",
+                              "required": false,
+                              "multiple": true,
+                              "attributes": [
+                                {
+                                  "name": "type",
+                                  "path": "/data/operations/data/products/price/priceBreakdowns/type",
+                                  "dataType": "STRING",
+                                  "required": true,
+                                  "multiple": false,
+                                  "attributes": []
+                                },
+                                {
+                                  "name": "amount",
+                                  "path": "/data/operations/data/products/price/priceBreakdowns/amount",
+                                  "dataType": "NUMBER",
+                                  "required": true,
+                                  "multiple": false,
+                                  "attributes": []
+                                },
+                                {
+                                  "name": "calculation",
+                                  "path": "/data/operations/data/products/price/priceBreakdowns/calculation",
+                                  "dataType": "OBJECT",
+                                  "required": false,
+                                  "multiple": false,
+                                  "attributes": [
+                                    {
+                                      "name": "type",
+                                      "path": "/data/operations/data/products/price/priceBreakdowns/calculation/type",
+                                      "dataType": "STRING",
+                                      "required": true,
+                                      "multiple": false,
+                                      "attributes": []
+                                    },
+                                    {
+                                      "name": "value",
+                                      "path": "/data/operations/data/products/price/priceBreakdowns/calculation/value",
+                                      "dataType": "NUMBER",
+                                      "required": true,
+                                      "multiple": false,
+                                      "attributes": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "scalePrices",
+                              "path": "/data/operations/data/products/price/scalePrices",
+                              "dataType": "OBJECT",
+                              "required": false,
+                              "multiple": true,
+                              "attributes": [
+                                {
+                                  "name": "minQuantity",
+                                  "path": "/data/operations/data/products/price/scalePrices/minQuantity",
+                                  "dataType": "NUMBER",
+                                  "required": true,
+                                  "multiple": false,
+                                  "attributes": []
+                                },
+                                {
+                                  "name": "maxQuantity",
+                                  "path": "/data/operations/data/products/price/scalePrices/maxQuantity",
+                                  "dataType": "NUMBER",
+                                  "required": false,
+                                  "multiple": false,
+                                  "attributes": []
+                                },
+                                {
+                                  "name": "price",
+                                  "path": "/data/operations/data/products/price/scalePrices/price",
+                                  "dataType": "NUMBER",
+                                  "required": true,
+                                  "multiple": false,
+                                  "attributes": []
+                                }
+                              ]
                             }
                           ]
                         }
