@@ -70,8 +70,72 @@
               "multiple": true,
               "attributes": [
                 {
+                  "name": "SalesOrganization",
+                  "path": "/data/value/SalesOrganization",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "DistributionChannel",
+                  "path": "/data/value/DistributionChannel",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "Division",
+                  "path": "/data/value/Division",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
                   "name": "Product",
                   "path": "/data/value/Product",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "SoldToParty",
+                  "path": "/data/value/SoldToParty",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "TransactionCurrency",
+                  "path": "/data/value/TransactionCurrency",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "RequestedQuantity",
+                  "path": "/data/value/RequestedQuantity",
+                  "dataType": "NUMBER",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "RequestedQuantityISOUnit",
+                  "path": "/data/value/RequestedQuantityISOUnit",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "RequestedQuantitySAPUnit",
+                  "path": "/data/value/RequestedQuantitySAPUnit",
                   "dataType": "STRING",
                   "required": false,
                   "multiple": false,
@@ -93,6 +157,22 @@
                   "multiple": true,
                   "attributes": [
                     {
+                      "name": "PricingProcedureStep",
+                      "path": "/data/value/_SalesPriceElements/PricingProcedureStep",
+                      "dataType": "STRING",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
+                      "name": "PricingProcedureCounter",
+                      "path": "/data/value/_SalesPriceElements/PricingProcedureCounter",
+                      "dataType": "STRING",
+                      "required": false,
+                      "multiple": false,
+                      "attributes": []
+                    },
+                    {
                       "name": "ConditionType",
                       "path": "/data/value/_SalesPriceElements/ConditionType",
                       "dataType": "STRING",
@@ -109,49 +189,8 @@
                       "attributes": []
                     },
                     {
-                      "name": "ConditionCalculationType",
-                      "path": "/data/value/_SalesPriceElements/ConditionCalculationType",
-                      "dataType": "STRING",
-                      "required": false,
-                      "multiple": false,
-                      "attributes": []
-                    },
-                    {
-                      "name": "ConditionRateValue",
-                      "path": "/data/value/_SalesPriceElements/ConditionRateValue",
-                      "dataType": "NUMBER",
-                      "required": false,
-                      "multiple": false,
-                      "attributes": []
-                    }
-                  ]
-                },
-                {
-                  "name": "_SlsPrcgCndnRecdValidity",
-                  "path": "/data/value/_SlsPrcgCndnRecdValidity",
-                  "dataType": "OBJECT",
-                  "required": false,
-                  "multiple": true,
-                  "attributes": [
-                    {
-                      "name": "ConditionScaleQuantity",
-                      "path": "/data/value/_SlsPrcgCndnRecdValidity/ConditionScaleQuantity",
-                      "dataType": "NUMBER",
-                      "required": false,
-                      "multiple": false,
-                      "attributes": []
-                    },
-                    {
-                      "name": "ConditionScaleQuantityUnit",
-                      "path": "/data/value/_SlsPrcgCndnRecdValidity/ConditionScaleQuantityUnit",
-                      "dataType": "STRING",
-                      "required": false,
-                      "multiple": false,
-                      "attributes": []
-                    },
-                    {
-                      "name": "ConditionRateValue",
-                      "path": "/data/value/_SlsPrcgCndnRecdValidity/ConditionRateValue",
+                      "name": "ConditionRateAmount",
+                      "path": "/data/value/_SalesPriceElements/ConditionRateAmount",
                       "dataType": "NUMBER",
                       "required": false,
                       "multiple": false,
@@ -171,14 +210,14 @@
           "name": "data",
           "path": "/data",
           "dataType": "OBJECT",
-          "required": false,
+          "required": true,
           "multiple": false,
           "attributes": [
             {
               "name": "operations",
               "path": "/data/operations",
               "dataType": "OBJECT",
-              "required": false,
+              "required": true,
               "multiple": true,
               "attributes": [
                 {
@@ -197,6 +236,64 @@
                   "multiple": false,
                   "attributes": [
                     {
+                      "name": "salesArea",
+                      "path": "/data/operations/data/salesArea",
+                      "dataType": "OBJECT",
+                      "required": true,
+                      "multiple": false,
+                      "attributes": [
+                        {
+                          "name": "salesOrganization",
+                          "path": "/data/operations/data/salesArea/salesOrganization",
+                          "dataType": "STRING",
+                          "required": true,
+                          "multiple": false,
+                          "attributes": []
+                        },
+                        {
+                          "name": "distributionChannel",
+                          "path": "/data/operations/data/salesArea/distributionChannel",
+                          "dataType": "STRING",
+                          "required": true,
+                          "multiple": false,
+                          "attributes": []
+                        },
+                        {
+                          "name": "division",
+                          "path": "/data/operations/data/salesArea/division",
+                          "dataType": "STRING",
+                          "required": true,
+                          "multiple": false,
+                          "attributes": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "currency",
+                      "path": "/data/operations/data/currency",
+                      "dataType": "OBJECT",
+                      "required": true,
+                      "multiple": false,
+                      "attributes": [
+                        {
+                          "name": "code",
+                          "path": "/data/operations/data/currency/code",
+                          "dataType": "STRING",
+                          "required": true,
+                          "multiple": false,
+                          "attributes": []
+                        },
+                        {
+                          "name": "sapCode",
+                          "path": "/data/operations/data/currency/sapCode",
+                          "dataType": "STRING",
+                          "required": false,
+                          "multiple": false,
+                          "attributes": []
+                        }
+                      ]
+                    },
+                    {
                       "name": "products",
                       "path": "/data/operations/data/products",
                       "dataType": "OBJECT",
@@ -208,6 +305,47 @@
                           "path": "/data/operations/data/products/id",
                           "dataType": "STRING",
                           "required": true,
+                          "multiple": false,
+                          "attributes": []
+                        },
+                        {
+                          "name": "salesMeasureUnit",
+                          "path": "/data/operations/data/products/salesMeasureUnit",
+                          "dataType": "OBJECT",
+                          "required": true,
+                          "multiple": false,
+                          "attributes": [
+                            {
+                              "name": "code",
+                              "path": "/data/operations/data/products/salesMeasureUnit/code",
+                              "dataType": "STRING",
+                              "required": true,
+                              "multiple": false,
+                              "attributes": []
+                            },
+                            {
+                              "name": "isoCode",
+                              "path": "/data/operations/data/products/salesMeasureUnit/isoCode",
+                              "dataType": "STRING",
+                              "required": false,
+                              "multiple": false,
+                              "attributes": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "quantity",
+                          "path": "/data/operations/data/products/quantity",
+                          "dataType": "NUMBER",
+                          "required": true,
+                          "multiple": false,
+                          "attributes": []
+                        },
+                        {
+                          "name": "customerNumber",
+                          "path": "/data/operations/data/products/customerNumber",
+                          "dataType": "STRING",
+                          "required": false,
                           "multiple": false,
                           "attributes": []
                         },
