@@ -499,47 +499,6 @@
                           "attributes": []
                         }
                       ]
-                    },
-                    {
-                      "name": "messages",
-                      "path": "/data/operations/data/messages",
-                      "dataType": "OBJECT",
-                      "required": false,
-                      "multiple": true,
-                      "attributes": [
-                        {
-                          "name": "kind",
-                          "path": "/data/operations/data/messages/kind",
-                          "dataType": "STRING",
-                          "required": false,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "code",
-                          "path": "/data/operations/data/messages/code",
-                          "dataType": "STRING",
-                          "required": false,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "message",
-                          "path": "/data/operations/data/messages/message",
-                          "dataType": "STRING",
-                          "required": false,
-                          "multiple": false,
-                          "attributes": []
-                        },
-                        {
-                          "name": "target",
-                          "path": "/data/operations/data/messages/target",
-                          "dataType": "STRING",
-                          "required": false,
-                          "multiple": false,
-                          "attributes": []
-                        }
-                      ]
                     }
                   ]
                 }
