@@ -3,7 +3,7 @@ name: S4 Sales Price sample Plugin
 version: 1.0.0
 sourceAccountId: "SAP"
 sourceTenantId: "SAP_CCS"
-description: Integrates with SAP S/4 HANA to retrieve real-time sales price information for SAP Commerce Cloud, cloud ERP edition.
+description: Integrates with SAP S/4HANA to retrieve real-time sales price information for SAP Commerce Cloud, cloud ERP edition.
 author: SAP Commerce Cloud, cloud ERP edition
 pluginId: 9216d291-34bc-438a-8e7a-4e365f359b77
 license: Apache-2.0
