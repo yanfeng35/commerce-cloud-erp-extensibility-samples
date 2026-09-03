@@ -479,8 +479,8 @@
                                   "attributes": []
                                 },
                                 {
-                                  "name": "price",
-                                  "path": "/data/operations/data/productPrices/price/scalePrices/price",
+                                  "name": "value",
+                                  "path": "/data/operations/data/productPrices/price/scalePrices/value",
                                   "dataType": "NUMBER",
                                   "required": true,
                                   "multiple": false,

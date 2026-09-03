@@ -1,6 +1,6 @@
 ---
 name: "S4 Retrieve Sales Price Plugin"
-version: "1.0.1"
+version: "1.0.7"
 sourceAccountId: "38671960"
 sourceTenantId: "hmwj2588fzjj"
 description: "Integrates with SAP S4HANA to retrieve real-time sales price information for SAP Commerce Cloud, cloud ERP edition."

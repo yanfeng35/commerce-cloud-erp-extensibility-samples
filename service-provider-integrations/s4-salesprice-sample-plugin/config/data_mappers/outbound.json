@@ -63,6 +63,64 @@
           "multiple": false,
           "attributes": [
             {
+              "name": "salesArea",
+              "path": "/data/salesArea",
+              "dataType": "OBJECT",
+              "required": true,
+              "multiple": false,
+              "attributes": [
+                {
+                  "name": "salesOrganization",
+                  "path": "/data/salesArea/salesOrganization",
+                  "dataType": "STRING",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "distributionChannel",
+                  "path": "/data/salesArea/distributionChannel",
+                  "dataType": "STRING",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "division",
+                  "path": "/data/salesArea/division",
+                  "dataType": "STRING",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": []
+                }
+              ]
+            },
+            {
+              "name": "currency",
+              "path": "/data/currency",
+              "dataType": "OBJECT",
+              "required": true,
+              "multiple": false,
+              "attributes": [
+                {
+                  "name": "code",
+                  "path": "/data/currency/code",
+                  "dataType": "STRING",
+                  "required": true,
+                  "multiple": false,
+                  "attributes": []
+                },
+                {
+                  "name": "sapCode",
+                  "path": "/data/currency/sapCode",
+                  "dataType": "STRING",
+                  "required": false,
+                  "multiple": false,
+                  "attributes": []
+                }
+              ]
+            },
+            {
               "name": "products",
               "path": "/data/products",
               "dataType": "OBJECT",
@@ -113,74 +171,16 @@
               ]
             },
             {
-              "name": "currency",
-              "path": "/data/currency",
-              "dataType": "OBJECT",
-              "required": true,
-              "multiple": false,
-              "attributes": [
-                {
-                  "name": "code",
-                  "path": "/data/currency/code",
-                  "dataType": "STRING",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "sapCode",
-                  "path": "/data/currency/sapCode",
-                  "dataType": "STRING",
-                  "required": false,
-                  "multiple": false,
-                  "attributes": []
-                }
-              ]
-            },
-            {
-              "name": "salesArea",
-              "path": "/data/salesArea",
-              "dataType": "OBJECT",
-              "required": true,
-              "multiple": false,
-              "attributes": [
-                {
-                  "name": "salesOrganization",
-                  "path": "/data/salesArea/salesOrganization",
-                  "dataType": "STRING",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "distributionChannel",
-                  "path": "/data/salesArea/distributionChannel",
-                  "dataType": "STRING",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": []
-                },
-                {
-                  "name": "division",
-                  "path": "/data/salesArea/division",
-                  "dataType": "STRING",
-                  "required": true,
-                  "multiple": false,
-                  "attributes": []
-                }
-              ]
-            },
-            {
-              "name": "pricingAt",
-              "path": "/data/pricingAt",
+              "name": "soldToParty",
+              "path": "/data/soldToParty",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
               "attributes": []
             },
             {
-              "name": "soldToParty",
-              "path": "/data/soldToParty",
+              "name": "pricingAt",
+              "path": "/data/pricingAt",
               "dataType": "STRING",
               "required": false,
               "multiple": false,
